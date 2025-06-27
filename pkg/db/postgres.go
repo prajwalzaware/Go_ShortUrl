@@ -34,7 +34,7 @@ func ConnectToDB() {
 
 }
 func RunSchemaMigration() {
-	sqlByte, err := os.ReadFile("pkg/db/schema.sql")
+	sqlByte, err := os.ReadFile("pkg/db/init.sql")
 	if err != nil {
 		log.Fatalf("❌ Unable to read schema file: %v\n", err)
 	}
