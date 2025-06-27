@@ -13,6 +13,8 @@ func main() {
 	config.LoadEnv()
 	redisClinet.ConnectRedis()
 	db.ConnectToDB()
+	db.RunSchemaMigration()
+
 	go background.ClickFlusher()
 
 	app := fiber.New()
