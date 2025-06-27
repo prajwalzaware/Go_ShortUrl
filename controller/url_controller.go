@@ -71,7 +71,7 @@ func ShortenURLHandler(c *fiber.Ctx) error {
 	}
 
 	return c.Status(fiber.StatusCreated).JSON(fiber.Map{
-		"short_url": config.GetEnv("BASE_URL", "http://localhost:8080/") + url.ShortCode,
+		"short_url": config.GetEnv("BASE_URL", "http://localhost:8080/") + "url/redirect/" + url.ShortCode,
 		"original":  url.OriginalURL,
 	})
 }
